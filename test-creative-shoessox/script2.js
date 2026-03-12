@@ -159,8 +159,15 @@
         console.log('[Tracking] ' + eventName);
         fnfetchAPI(url);
         // Send to Visiion SDK
-        if (window.Visiion && window.Visiion.track) {
-            window.Visiion.track(eventName);
+        try {
+            if (window.Visiion && typeof window.Visiion.track === 'function') {
+                window.Visiion.track(eventName);
+                console.log('[Visiion] track sent: ' + eventName);
+            } else {
+                console.warn('[Visiion] track not available', typeof window.Visiion, window.Visiion);
+            }
+        } catch (err) {
+            console.error('[Visiion] track error', err);
         }
     }
 

@@ -9,32 +9,32 @@
     @font-face {
       font-family: 'TheFuture';
       font-weight: 900;
-      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/TheFuture-Black.otf') format('opentype')
+      src: url('assets/Fonts/TheFuture-Black.otf') format('opentype')
     }
 
     @font-face {
       font-family: 'TheFuture';
       font-weight: 700;
-      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/TheFuture-Bold.otf') format('opentype')
+      src: url('assets/Fonts/TheFuture-Bold.otf') format('opentype')
     }
 
     @font-face {
       font-family: 'TheFuture';
       font-weight: 500;
-      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/TheFuture-Medium.otf') format('opentype')
+      src: url('assets/Fonts/TheFuture-Medium.otf') format('opentype')
     }
 
     @font-face {
       font-family: 'Recoleta';
       font-weight: 400;
-      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/Recoleta-Regular.otf') format('opentype')
+      src: url('assets/Fonts/Recoleta-Regular.otf') format('opentype')
     }
 
     @font-face {
       font-family: 'Pageantry';
       font-weight: 300;
       font-style: italic;
-      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/Pageantry-LightItalic.otf') format('opentype')
+      src: url('assets/Fonts/Pageantry-LightItalic.otf') format('opentype')
     }
 
     * {
@@ -137,30 +137,15 @@
     <div id="playAgainBtn">PLAY AGAIN</div>
   </div>
 
-  <!-- Patch Image to request CORS (test only — not needed in real ad serving
-       where all assets are same-origin inside the creative zip) -->
+  <!-- All assets local = same origin = canvas stays clean -->
   <script>
-    (function() {
-      var Orig = window.Image;
-      var P = Object.create(HTMLImageElement.prototype);
-      window.Image = function(w, h) {
-        var img = w !== undefined ? new Orig(w, h) : new Orig();
-        img.crossOrigin = 'anonymous';
-        return img;
-      };
-      window.Image.prototype = P;
-    })();
-  </script>
-
-  <!-- Original GAM tracking (DMP tracker removed, paths kept) -->
-  <script>
-    window.trackingPath = 'https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/';
+    window.trackingPath = './assets/';
     window.trackingType = "";
     window.setTracker = "";
     window.landingPageUrl = "https://shoesandsox.com.au/?utm_source=programmatic&utm_medium=iion&utm_campaign=sneaker-month";
   </script>
 
-  <!-- Vision SDK -->
+  <!-- Visiion SDK -->
   <script>
     window.__visiion = {
       sdkKey: 'shoessox_sneaker_2026',
@@ -170,9 +155,8 @@
   </script>
   <script src="vision.min.js"></script>
 
-  <!-- Original creative script (game logic) -->
-  <script
-    src="https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/script2.js"></script>
+  <!-- Game script (local, same-origin) -->
+  <script src="script2.js"></script>
 </body>
 
 </html>

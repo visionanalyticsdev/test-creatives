@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 960">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <image id="BG" width="640" height="960" xlink:href="Assets/BG.png"/>
+  <g id="row_1">
+    <rect id="_x31_" class="st0" x="56.4" y="198.1" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x32_" class="st0" x="193.2" y="198.1" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x33_" class="st0" x="331" y="198.1" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x34_" class="st0" x="468.4" y="198.1" width="117.4" height="119" rx="9" ry="9"/>
+  </g>
+  <g id="row_2">
+    <rect id="_x31_1" data-name="_x31_" class="st0" x="56.4" y="340.1" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x32_1" data-name="_x32_" class="st0" x="193.2" y="340.1" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x33_1" data-name="_x33_" class="st0" x="331" y="340.1" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x34_1" data-name="_x34_" class="st0" x="468.4" y="340.1" width="117.4" height="119" rx="9" ry="9"/>
+  </g>
+  <g id="row_3">
+    <rect id="_x31_2" data-name="_x31_" class="st0" x="56.4" y="480.8" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x32_2" data-name="_x32_" class="st0" x="193.2" y="480.8" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x33_2" data-name="_x33_" class="st0" x="331" y="480.8" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x34_2" data-name="_x34_" class="st0" x="468.4" y="480.8" width="117.4" height="119" rx="9" ry="9"/>
+  </g>
+  <g id="row_4">
+    <rect id="_x31_3" data-name="_x31_" class="st0" x="56.4" y="619.9" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x32_3" data-name="_x32_" class="st0" x="193.2" y="619.9" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x33_3" data-name="_x33_" class="st0" x="331" y="619.9" width="117.4" height="119" rx="9" ry="9"/>
+    <rect id="_x34_3" data-name="_x34_" class="st0" x="468.4" y="619.9" width="117.4" height="119" rx="9" ry="9"/>
+  </g>
+</svg>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Shoes &amp; Sox</title>
+  <style>
+    @font-face {
+      font-family: 'TheFuture';
+      font-weight: 900;
+      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/TheFuture-Black.otf') format('opentype')
+    }
+
+    @font-face {
+      font-family: 'TheFuture';
+      font-weight: 700;
+      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/TheFuture-Bold.otf') format('opentype')
+    }
+
+    @font-face {
+      font-family: 'TheFuture';
+      font-weight: 500;
+      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/TheFuture-Medium.otf') format('opentype')
+    }
+
+    @font-face {
+      font-family: 'Recoleta';
+      font-weight: 400;
+      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/Recoleta-Regular.otf') format('opentype')
+    }
+
+    @font-face {
+      font-family: 'Pageantry';
+      font-weight: 300;
+      font-style: italic;
+      src: url('https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/Fonts/Pageantry-LightItalic.otf') format('opentype')
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0a0025
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
+
+    canvas {
+      display: block;
+      touch-action: none;
+      position: relative;
+      z-index: 1
+    }
+
+    #endOverlay {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none
+    }
+
+    #endOverlay.active {
+      display: block;
+      pointer-events: auto
+    }
+
+    #carouselWrap {
+      position: absolute;
+      overflow: visible;
+      pointer-events: none
+    }
+
+    #carouselStrip {
+      display: flex;
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      perspective: 1000
+    }
+
+    #carouselStrip img {
+      flex-shrink: 0;
+      pointer-events: none;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden
+    }
+
+    #endOverlay {
+      overflow: hidden
+    }
+
+    #endCta {
+      position: absolute;
+      cursor: pointer;
+      pointer-events: auto
+    }
+
+    #playAgainBtn {
+      position: absolute;
+      pointer-events: auto;
+      cursor: pointer;
+      font-family: 'TheFuture', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 1px;
+      text-decoration: underline;
+      text-underline-offset: 3px
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="c"></canvas>
+  <div id="endOverlay">
+    <div id="carouselWrap">
+      <div id="carouselStrip"></div>
+    </div>
+    <img id="endCta" src="" alt="CTA">
+    <div id="playAgainBtn">PLAY AGAIN</div>
+  </div>
+
+  <!-- Original GAM tracking (DMP tracker removed, paths kept) -->
+  <script>
+    window.trackingPath = 'https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/';
+    window.trackingType = "";
+    window.setTracker = "";
+    window.landingPageUrl = "https://shoesandsox.com.au/?utm_source=programmatic&utm_medium=iion&utm_campaign=sneaker-month";
+  </script>
+
+  <!-- Vision SDK — inline, self-contained -->
+  <script>
+    window.__visiion = {
+      sdkKey: 'shoessox_sneaker_2026',
+      endpoint: 'https://vision-collector.visionanalytics.workers.dev',
+      debug: true,
+    };
+  </script>
+  <script src="vision.min.js"></script>
+
+  <!-- Original creative script (game logic) -->
+  <script
+    src="https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/script2.js"></script>
+</body>
+
+</html>

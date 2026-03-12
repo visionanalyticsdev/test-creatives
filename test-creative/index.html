@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visiion Test Creative - 300x250 Expandable</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: pointer;
+  }
+  .banner {
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .logo span { color: #ffd700; }
+  .tagline {
+    font-size: 13px;
+    opacity: 0.9;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .features {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .feature {
+    text-align: center;
+    padding: 8px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    font-size: 11px;
+    width: 80px;
+    transition: background 0.2s;
+  }
+  .feature:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  .feature-icon { font-size: 20px; margin-bottom: 4px; }
+  #cta {
+    background: #ffd700;
+    color: #333;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  #cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  }
+  .expand-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+  .panel {
+    display: none;
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .panel.active { display: flex; }
+  .panel h2 { font-size: 18px; margin-bottom: 12px; }
+  .panel p { font-size: 12px; line-height: 1.5; text-align: center; margin-bottom: 16px; opacity: 0.9; }
+  #back-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .nav-dots {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+  }
+  .dot.active { background: #ffd700; }
+</style>
+</head>
+<body>
+
+<!-- Panel 1: Main banner -->
+<div class="banner panel active" id="panel-main" data-v="panel-main">
+  <div class="logo">VISI<span>I</span>ON</div>
+  <div class="tagline">See what users do inside your ads</div>
+  <div class="features">
+    <div class="feature" data-v="feature-heatmaps" id="feature-heatmaps">
+      <div class="feature-icon">🔥</div>
+      Heatmaps
+    </div>
+    <div class="feature" data-v="feature-replay" id="feature-replay">
+      <div class="feature-icon">▶️</div>
+      Replay
+    </div>
+    <div class="feature" data-v="feature-funnels" id="feature-funnels">
+      <div class="feature-icon">📊</div>
+      Funnels
+    </div>
+  </div>
+  <button id="cta" data-v="cta">Learn More</button>
+  <div class="expand-hint">Click to explore →</div>
+</div>
+
+<!-- Panel 2: Detail panel -->
+<div class="panel" id="panel-detail" data-v="panel-detail">
+  <h2>Analytics for Ads</h2>
+  <p>
+    Visiion embeds a lightweight SDK inside your HTML5 rich media ads
+    to capture mouse movements, clicks, hovers, and interaction paths.
+    See exactly where users engage — and where they don't.
+  </p>
+  <button id="cta-detail" data-v="cta-detail"
+    style="background:#ffd700;color:#333;border:none;padding:10px 28px;border-radius:25px;font-weight:700;cursor:pointer;">
+    Get Started
+  </button>
+  <button id="back-btn" data-v="back-btn">← Back</button>
+  <div class="nav-dots">
+    <div class="dot" id="dot-1"></div>
+    <div class="dot active" id="dot-2"></div>
+  </div>
+</div>
+
+<!-- Vision SDK -->
+<script>
+  window.__visiion = {
+    sdkKey: 'test_key_12345',
+    endpoint: 'https://vision-collector.visionanalytics.workers.dev',
+    debug: true,
+  };
+</script>
+<script src="vision.min.js"></script>
+
+<script>
+  // Simple interactive behavior for the test creative
+  document.getElementById('cta').addEventListener('click', function() {
+    document.getElementById('panel-main').classList.remove('active');
+    document.getElementById('panel-detail').classList.add('active');
+    document.getElementById('dot-1').classList.remove('active');
+    document.getElementById('dot-2').classList.add('active');
+  });
+
+  document.getElementById('back-btn').addEventListener('click', function() {
+    document.getElementById('panel-detail').classList.remove('active');
+    document.getElementById('panel-main').classList.add('active');
+    document.getElementById('dot-2').classList.remove('active');
+    document.getElementById('dot-1').classList.add('active');
+  });
+
+  document.querySelectorAll('.feature').forEach(function(el) {
+    el.addEventListener('click', function() {
+      document.getElementById('panel-main').classList.remove('active');
+      document.getElementById('panel-detail').classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

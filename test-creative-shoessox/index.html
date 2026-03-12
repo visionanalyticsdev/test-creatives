@@ -137,6 +137,21 @@
     <div id="playAgainBtn">PLAY AGAIN</div>
   </div>
 
+  <!-- Patch Image to request CORS (test only — not needed in real ad serving
+       where all assets are same-origin inside the creative zip) -->
+  <script>
+    (function() {
+      var Orig = window.Image;
+      var P = Object.create(HTMLImageElement.prototype);
+      window.Image = function(w, h) {
+        var img = w !== undefined ? new Orig(w, h) : new Orig();
+        img.crossOrigin = 'anonymous';
+        return img;
+      };
+      window.Image.prototype = P;
+    })();
+  </script>
+
   <!-- Original GAM tracking (DMP tracker removed, paths kept) -->
   <script>
     window.trackingPath = 'https://creativehubiion.github.io/advertiser-creatives/finalbuildfiles/2026/Mar/shoesneakers/assets/';
@@ -145,7 +160,7 @@
     window.landingPageUrl = "https://shoesandsox.com.au/?utm_source=programmatic&utm_medium=iion&utm_campaign=sneaker-month";
   </script>
 
-  <!-- Vision SDK — inline, self-contained -->
+  <!-- Vision SDK -->
   <script>
     window.__visiion = {
       sdkKey: 'shoessox_sneaker_2026',

@@ -158,6 +158,10 @@
         var url = TRACKING_BASE_URL + eventName.replace(/ /g, '');
         console.log('[Tracking] ' + eventName);
         fnfetchAPI(url);
+        // Send to Visiion SDK
+        if (window.Visiion && window.Visiion.track) {
+            window.Visiion.track(eventName);
+        }
     }
 
     /* ─── Game State ─── */
@@ -907,7 +911,7 @@
         ctaEl.style.left = (110 * scale) + 'px';
         ctaEl.style.top = (809 * scale) + 'px';
         ctaEl.style.width = (421 * scale) + 'px';
-        ctaEl.onclick = function () { window.open(window.landingPageUrl, '_blank'); };
+        ctaEl.onclick = function () { trackEvent('CTAClick'); window.open(window.landingPageUrl, '_blank'); };
 
         // Play Again button
         var playBtn = document.getElementById('playAgainBtn');
